@@ -1,8 +1,0 @@
-jQuery MASK: 
-LINK: https://igorescobar.github.io/jQuery-Mask-Plugin/
-
-jQuery VALIDATION:
-LINK: https://jqueryvalidation.org/
-
-jQuery CAROUSEL / SLICK
-LINK: https://kenwheeler.github.io/slick/
