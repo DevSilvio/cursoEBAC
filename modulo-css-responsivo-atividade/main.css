@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "roboto", serif;
+    text-decoration: none;
+}
+
+h2 {
+    color: #266dca;
+    border-bottom: 1px solid #266dca;
+    font-style: italic;
+}
+
+h3,p {
+    color: #000;
+}
+
+header {
+    background-color: #266dca;
+    padding: 12px 0;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #fff;
+    font-style: italic;
+}
+
+
+nav a {
+    margin-right: 16px;
+    font-size: 18px;
+    color: #fff;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sobre img {
+    height: 360px;
+    margin-right: 32px;
+}
+
+.sobre {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.sobre h2 {
+    padding: 8px;
+    margin-bottom: 46px
+}
+
+.tenis {
+    display: grid;
+    grid-template-columns: repeat(4,24.25%);
+    column-gap: 1%;
+}
+
+article {
+    margin: 42px 0;
+}
+
+article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 18px;
+}
+
+article a h3,
+article a p {
+    margin-bottom: 8px;
+    cursor: default;
+}
+
+article button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #266dca;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+article button:hover {
+    background-color: #194681;
+}
+
+@media screen and (min-width:641px) and (max-width:1023px){
+    .container {
+        max-width: 90%;
+    }
+    
+    .sobre {
+        display: block;
+    }
+
+    .sobre img {
+        margin: 0 auto; 
+        height: auto;
+        max-width: 100%; 
+    }
+
+    .sobre h2 {
+        margin-top: 20px;
+    }
+
+    .tenis {
+        display: grid;
+        grid-template-columns: repeat(2,49%);
+        column-gap: 2%;
+    }
+}
+
+@media screen and (max-width: 640px){
+    header {
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        max-width: 90%;
+    }
+    
+    .sobre {
+        display: block;
+    }
+
+    .sobre img {
+        margin: 0 auto; 
+        height: auto;
+        max-width: 100%; 
+    }
+
+    .sobre h2 {
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .tenis {
+        display: block;
+    }
+}

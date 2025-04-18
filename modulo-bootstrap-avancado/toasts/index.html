@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toasta com bootstrap</title>´
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+</head>
+<body>
+    <header>
+        <button type="button" class="btn btn-warning" id="avisos">Checar Avisos</button>
+    </header>
+    <div class="toastt-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" data-bs-autohide="false" id="mensagemToast">
+            <header class="toast-header">
+                <strong>Importante!</strong>
+                <button data-bs-dismiss="toast" type="button" class="btn-close ms-auto"></button>
+            </header>
+            <div class="toast-body">
+                Você possi 10 mensagens não lidas
+            </div>
+        </div>
+    </div>
+    <script src="lib/bootstrap.bundle.min.js"></script>
+    <script>
+        const VerToast = document.getElementById('avisos');
+        const mensagemToast = document.getElementById('mensagemToast');
+
+        if(VerToast){
+            VerToast.addEventListener('click', function(){
+                const toast = new bootstrap.Toast(mensagemToast)
+                toast.show();
+            })
+        }
+    </script>
+</body>
+</html>

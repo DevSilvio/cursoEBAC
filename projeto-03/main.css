@@ -1,0 +1,54 @@
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.navbar {
+    background-color: #e15f41;
+}
+
+#cabecalho .nav .nav-link.active{
+    background-color: #fff;
+    color: #e15f41;
+}
+
+#cabecalho .nav .nav-link,
+h1.navbar-brand,
+h1.navbar-brand:hover,
+.nav-cardapio .nav-link.active:hover {
+    color: #fff;
+}
+
+.navbar-toggler {
+    background-color: #ffeae6;
+}
+
+.fontPacifico {
+    font-family: pacifico, cursive;
+}
+
+.fontColor {
+    color: #e15f41;
+}
+
+#sobre,
+#cardapio {
+    background-color: #ffeae6;
+}
+
+.nav-cardapio .nav-link.active,
+#contato button {
+    background-color: #e15f41;
+    color: #fff;
+}
+
+.nav-cardapio .nav-link:hover {
+    color: #e15f41;
+}
+
+textarea {
+    resize: none;
+}
+
+@media (max-width: 767) {
+    
+}

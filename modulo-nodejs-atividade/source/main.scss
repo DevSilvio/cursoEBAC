@@ -1,0 +1,114 @@
+@use 'config/reset';
+@use 'config/variaveis';
+
+@mixin images(){
+    width: 120px;
+    background-color: variaveis.$corImages;
+}
+
+body {
+    background-color: variaveis.$fontPrincipal;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: variaveis.$corSecundaria;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+    }
+
+    .imgHeader {
+        @include images();
+        height: 70px;
+    }
+}
+
+ul {
+    display: flex;
+
+    li {
+        list-style: none;
+
+        a {
+            margin-left: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: variaveis.$corPrimaria;
+        }
+    }
+}
+
+.imgPrincipal {
+    @include images();
+    height: 180px;
+}
+
+section {
+    padding: 56px 0;
+
+    .products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+    
+        .product-item {
+    
+            .imgPrincipal {
+            width: 100%;
+            border-radius: 16px;
+            }
+    
+            .product-button {
+                display: block;
+                background-color: variaveis.$corButton;
+                color: variaveis.$corPrimaria;
+                text-align: center;
+                padding: 8px 0;
+                border-radius: 8px;
+                margin: 8px 0;
+                width: 100%;
+    
+                &:hover {
+                    background-color: variaveis.$corHoverButton;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variaveis.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+
+    section .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: 32px;
+    }
+}

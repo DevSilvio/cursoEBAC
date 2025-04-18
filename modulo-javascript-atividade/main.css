@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 480px;
+    width: 100%;
+    margin: 10% auto;
+}
+
+h1,h2 {
+    text-align: center;
+}
+h2 {
+    margin-bottom: 32px;
+}
+
+input, button {
+    display: block;
+    padding: 8px;
+    margin-top: 6px;
+    width: 100%
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #69f369;
+    border: 2px solid #000;
+}
+
+.campoA, .campoB {
+    background-color: red;
+    color: #fff;
+    padding: 4px;
+    margin-top: 3px;
+    display: none;
+}
+
+.mensagemSucesso {
+    background-color: #69f369;
+    padding: 6px;
+    margin-top: 6px;
+    text-align: center;
+    border:2px solid #000;
+    display: none;
+}
+
+.mensagemErro {
+    background-color: red;
+    color: #fff;
+    padding: 6px;
+    margin-top: 6px;
+    text-align: center;
+    border:2px solid #000;
+    display: none;
+}
+
+.mensagemEmpate {
+    background-color: #eaf369;
+    padding: 6px;
+    margin-top: 6px;
+    text-align: center;
+    border:2px solid #000;
+    display: none;
+}

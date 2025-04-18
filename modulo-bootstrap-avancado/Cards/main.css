@@ -1,0 +1,9 @@
+.img {
+    background-color: rgba(0,0,0,0.3);
+    height: 200px;
+    width: auto;
+}
+
+.card-img-overlay {
+    background-color: rgba(0,0,0,0.5);
+}
