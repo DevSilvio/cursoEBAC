@@ -6,9 +6,9 @@
 - Pasta de desenvolvimento "dev" Grunt compila o que está em source para cá, sem minificar, facilitando testes e debug.
 - Por fim, pasta de produção "dist" Grunt pega os arquivos de dev/, minifica, remove espaços, comprime imagens etc.Com resultado de um codigo leve, otimizado,pronto para subir no servidor
 
-<p align = "center">Clique para ver 👇</p>
+<p text-align="center">Clique para ver 👇</p>
 
-<p align = "center">
+<p text-align="center">
     <a href="https://sorteador-gruntjs-beige.vercel.app/">
         <img src="imagem/sorteadorGruntjs.png" alt="Sorteador de números"></img>
     </a>
