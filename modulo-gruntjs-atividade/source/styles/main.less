@@ -1,0 +1,62 @@
+@fontPrincipal: Montserrat, sans-serif;
+@corDeFundo: #ccc;
+@corDoButton: #40ce47;
+@hoverButton: #298b2e;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: @fontPrincipal;
+}
+
+body {
+    background-color: @corDeFundo;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 25px auto;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 44px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+
+    input, textarea, button {
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 70%;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    button {
+        background-color: @corDoButton;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background-color: @hoverButton;
+            color: @corDeFundo;
+        }
+    }
+
+    .nomeErro{
+        display: none;
+    }
+}

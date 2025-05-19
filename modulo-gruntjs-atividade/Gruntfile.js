@@ -1,8 +1,8 @@
-module.exports = function(grunt){
+module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         less: {
-            development : {
+            development: {
                 files: {
                     './dev/styles/main.css' : './source/styles/main.less'
                 }
@@ -12,22 +12,22 @@ module.exports = function(grunt){
                     compress: true,
                 },
                 files: {
-                    './dist/styles/main.min.css' : './source/styles/main.less'
+                    './dist/styles/main.min.css' : './dev/styles/main.css'
                 }
             }
         },
         watch: {
             less: {
-                files: ['source/styles/**/*.less'],
+                files: ['./source/styles/**/*.less'],
                 tasks: ['less:development']
             },
             html: {
-                files: ['source/index.html'],
+                files: ['./source/index.html'],
                 tasks: ['replace:dev']
             },
             js: {
-                files: ['dev/scripts/main.js'],
-                tasks: ['replace:dev']
+                files: ['./source/scripts/main.js'],
+                tasks: ['copy:dev']
             }
         },
         replace: {
@@ -48,9 +48,9 @@ module.exports = function(grunt){
                     {
                         expand: true,
                         flatten: true,
-                        src: ['source/index.html'],
+                        src: 'source/index.html',
                         dest: 'dev/'
-                    },
+                    }
                 ]
             },
             dist: {
@@ -83,11 +83,11 @@ module.exports = function(grunt){
                     collapseWhitespace: true
                 },
                 files: {
-                    'prebuild/index.html' : 'source/index.html'
+                    'prebuild/index.html' : 'dev/index.html'
                 }
             }
         },
-        clean: ['prebuild'],
+        clean: ['./prebuild'],
         uglify: {
             target: {
                 files: {
@@ -98,9 +98,9 @@ module.exports = function(grunt){
         copy: {
             dev: {
                 expand: true,
-                cwd: 'source/scripts/',
-                src: ['main.js'],
-                dest: 'dev/scripts/'
+                flatten: true,
+                src: 'source/scripts/main.js',
+                dest: 'dev/scripts'
             }
         }
     })
@@ -111,8 +111,8 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-copy')
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['less:development', 'copy', 'replace:dev']);
-    grunt.registerTask('build', ['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
+    grunt.registerTask('default', ['watch', 'replace:dev', 'copy:dev']);
+    grunt.registerTask('build', ['less:production', 'replace:dist', 'htmlmin:dist', 'uglify']);
 }
