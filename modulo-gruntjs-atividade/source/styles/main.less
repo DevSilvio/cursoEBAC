@@ -2,6 +2,7 @@
 @corDeFundo: #ccc;
 @corDoButton: #40ce47;
 @hoverButton: #298b2e;
+@erro: red;
 
 * {
     margin: 0;
@@ -46,17 +47,32 @@ form {
 
     button {
         background-color: @corDoButton;
-        border: none;
+        border: 1px solid #000;
         font-weight: bold;
         cursor: pointer;
 
         &:hover {
             background-color: @hoverButton;
-            color: @corDeFundo;
         }
     }
 
-    .nomeErro{
+    .mensagemSucesso {
+        text-align: center;
+        background-color: @corDoButton;
+        width: 70%;
+        padding: 6px;
         display: none;
     }
+
+    .nomeErro{
+        color: @erro;
+        margin-bottom: 8px;
+        display: none;
+    }
+}
+
+input.erro {
+    color: @erro;
+    border-color: @erro;
+    outline: @erro;
 }

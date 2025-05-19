@@ -37,14 +37,27 @@ form textarea {
 }
 form button {
   background-color: #40ce47;
-  border: none;
+  border: 1px solid #000;
   font-weight: bold;
   cursor: pointer;
 }
 form button:hover {
   background-color: #298b2e;
-  color: #ccc;
+}
+form .mensagemSucesso {
+  text-align: center;
+  background-color: #40ce47;
+  width: 70%;
+  padding: 6px;
+  display: none;
 }
 form .nomeErro {
+  color: red;
+  margin-bottom: 8px;
   display: none;
+}
+input.erro {
+  color: red;
+  border-color: red;
+  outline: red;
 }

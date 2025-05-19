@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: {
-                    'prebuild/index.html' : 'dev/index.html'
+                    'prebuild/index.html' : 'source/index.html'
                 }
             }
         },
@@ -113,6 +113,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('default', ['watch', 'replace:dev', 'copy:dev']);
+    grunt.registerTask('default', ['replace:dev', 'copy:dev', 'watch']);
     grunt.registerTask('build', ['less:production', 'replace:dist', 'htmlmin:dist', 'uglify']);
 }
