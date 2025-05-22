@@ -4,12 +4,38 @@ document.addEventListener('DOMContentLoaded', function(){
     const nomeErro = document.querySelector('.nomeErro');
     const valores = document.getElementById('valor');
     const textarea = document.getElementById('textarea');
+    const numeroDaConta = document.getElementById('numeroConta');
     let formValido = false;
     
     function validaNome(nomeCompleto) {
         const palavras = nomeCompleto.trim().split(/\s+/).filter(palavra => /^[a-zA-ZÀ-ÿ]+$/.test(palavra));
         return palavras.length >= 2;
     }
+
+    function formatarConta(valor) {
+        let numeros = valor.replace(/\D/g, '');
+        numeros = numeros.slice(0, 6);
+        if (numeros.length > 5) {
+            return numeros.slice(0, 5) + '-' + numeros.slice(5);
+        } else {
+            return numeros;
+        }
+    }
+
+    function validaConta(valor) {
+        const regex = /^\d{5}-\d{1}$/;
+        return regex.test(valor);
+    }
+
+    numeroDaConta.addEventListener('input', function(e) {
+        e.target.value = formatarConta(e.target.value);
+        const valor = numeroDaConta.value;
+        if(!validaConta(valor)) {
+            numeroDaConta.classList.add('erro');
+        }else {
+            numeroDaConta.classList.remove('erro');
+        }
+    });
 
     valores.addEventListener('input', function(e) {
         let valorDeposito = e.target.value;
